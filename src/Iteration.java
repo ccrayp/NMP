@@ -16,28 +16,22 @@ public class Iteration {
     }
 
     public static Double findRoot(Double x1, Double accuracy) {
-        Double x2 = function(x1);
+        Double x2 = phi(x1);
 
         Integer i = 0;
-        ArrayList<ArrayList<Double>> table = new ArrayList<>();
         while (Math.abs(x2 - x1) > accuracy) {
             x1 = x2;
-            x2 = function(x1);
-            ArrayList<Double> row = new ArrayList<>();
-
-            row.add(i.doubleValue()); i++;
-            row.add(x2);
-            row.add(function(x2));
-
-            table.add(row);
+            x2 = phi(x1);
         }
-
-        GUITable.drawTable(table, new String[]{"i", "x", "f(x)"});
 
         return x2;
     }
 
+    public static Double phi(Double x) {
+        return -2 * sqrt(-sin(x));
+    }
+
     public static Double function(Double x) {
-        return asin(pow(-x, 2) / 4);
+        return pow(x, 2) + 4 * sin(x);
     }
 }
