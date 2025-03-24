@@ -2,19 +2,16 @@ import java.util.Scanner;
 
 public class Gauss {
 
-    private static final int N = 100;
-    //private static double[][] A = {{-0.47, 2.16, -2.90, 0.49},
-//                                    {-2.42, -2.86, 0.75, 3.73},
-  //                                  {2.54, -3.01, -3.36, -1.24},
-    //                                {-2.78, -3.35, -0.11, -1.88}};
-    //private static double[] B = {2.18, 4.41, 9.04, 0.70};
-    private static double[][] A = new double[N][N];
-    private static double[] B = new double[N];
+    private static final int N = 4;
+    private static double[][] A = {{-0.47, 2.16, -2.90, 0.49},
+                                    {-2.42, -2.86, 0.75, 3.73},
+                                    {2.54, -3.01, -3.36, -1.24},
+                                    {-2.78, -3.35, -0.11, -1.88}};
+    private static double[] B = {2.18, 4.41, 9.04, 0.70};
     private static double[] X = new double[N];
-
     public static void menu() {
-        Scanner scanner = new Scanner(System.in);
-        start();
+        //Scanner scanner = new Scanner(System.in);
+        //start();
         solve();
         printSolution();
     }

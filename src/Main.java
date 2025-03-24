@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        SLEIterations.menu();
+        IterativeSolver solver = new IterativeSolver();
+        solver.menu();
     }
 }
