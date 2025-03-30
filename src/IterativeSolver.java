@@ -1,17 +1,17 @@
 import java.util.Scanner;
 
 public class IterativeSolver {
-    private final int N = 4;
-    private double[][] A = {{-14.13, -3.82, 2.43, 3.20},
-                            {1.91, -8.01, 4.28, 0.75},
-                            {2.53, 4.15, -12.62, -1.03},
-                            {0.18, -1.72, 1.86, -8.51}};
-    private double[] B = {-24.78, 18.83, -1.90, 14.86};
-//    private double[][] A = {{3, 1}, {1, 2}};
-//    private double[] B = {4, 3};
+    private final int N = 2;
+//    private double[][] A = {{-14.13, -3.82, 2.43, 3.20},
+//                            {1.91, -8.01, 4.28, 0.75},
+//                            {2.53, 4.15, -12.62, -1.03},
+//                            {0.18, -1.72, 1.86, -8.51}};
+//    private double[] B = {-24.78, 18.83, -1.90, 14.86};
+    private double[][] A = {{3, 1}, {1, 2}};
+    private double[] B = {4, 3};
     private double[] X1 = new double[N];
     private double[] X2 = new double[N];
-    private double E = 0.000001;
+    private double E = 0.01;
     private double T;
     private Scanner scanner = new Scanner(System.in);
 
@@ -25,13 +25,11 @@ public class IterativeSolver {
         do {
             System.arraycopy(X2, 0, X1, 0, N);
             iterationStep(X1, X2);
-        } while (calculateNorm(X1, X2) > E * (1 - T) / T);
-        
+        } while (calculateNorm(X1, X2) > E * (1 - Math.abs(T)) / Math.abs(T));
+
         for (int i = 0; i < N; i++) {
             System.out.println("X(" + (i + 1) + ") = " + X2[i]);
         }
-
-        //checkSolution();
     }
 
     private String print(double[] a) {
