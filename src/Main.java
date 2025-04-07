@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        //Determinant.menu();
-        MNK.menu();
+        IntegralSquare.menu();
+        IntegralTrapezium.menu();
+        IntegralSimpson.menu();
     }
 }
