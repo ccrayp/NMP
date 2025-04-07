@@ -1,9 +1,11 @@
 public class Determinant {
-    private static final int N = 4;
+    private static final int N = 2;
     private static double[][] A = {{2.37, 0.47, -0.67, -2.20},
                                    {3.21, -1.27, 0.66, 2.40},
                                    {-0.87, -3.27, 2.86, -1.87},
                                    {-2.44, -2.90, -2.62, -3.29}};
+//    private static double[][] A = {{5, 5},
+//                                   {2, 3}};
     private static double DET;
 
     public static void menu() {
